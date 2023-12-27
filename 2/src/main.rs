@@ -44,11 +44,11 @@ fn playable_game(game: String, max_cubes: &HashMap<&str, u32>) -> u32{
     };
 
     // split substring 2 by ";" to get the 'hand'
-    let hands = game_id_and_games[1].trim().split(";").collect::<Vec<&str>>();
+    let hands = game_id_and_games[1].trim().split(";");
     
     // for each, split by "," to get number and color
     for hand in hands {
-        let hand_colors = hand.trim().split(",").collect::<Vec<&str>>();
+        let hand_colors = hand.trim().split(",");
 
         for color in hand_colors{
             // split by space " " and idx 0 is the num while 1 is the color
@@ -75,7 +75,7 @@ fn playable_game_part_2(game: String) -> u32{
     let game_id_and_games = game.trim().split(":").collect::<Vec<&str>>();
 
     // split substring 2 by ";" to get the 'hand'
-    let hands = game_id_and_games[1].trim().split(";").collect::<Vec<&str>>();
+    let hands = game_id_and_games[1].trim().split(";");
 
     let mut min_red: u32 = 0;
     let mut min_green: u32 = 0;
@@ -83,7 +83,7 @@ fn playable_game_part_2(game: String) -> u32{
     
     // for each, split by "," to get number and color
     for hand in hands {
-        let hand_colors = hand.trim().split(",").collect::<Vec<&str>>();
+        let hand_colors = hand.trim().split(",");
 
         for color in hand_colors{
             // split by space " " and idx 0 is the num while 1 is the color
