@@ -15,8 +15,6 @@ fn main() {
     if let Ok(lines) = read_lines("./input.txt") {
         // Consumes the iterator, returns an (Optional) String
 
-        // let mut prev_row_encoded:Vec<i32> = Vec::new();
-
         for line in lines {
             let mut start_idx:Option<usize> = None;
             let mut encoded_row:Vec<i32> = Vec::from([0]); // left pad
@@ -166,6 +164,7 @@ fn main() {
                     if top_row.len() + mid_row.len() + bottom_row.len() == 2{ 
                         let mut combo:Vec<i32> = Vec::new();
 
+                        // easily get the values we need without a care for which row they came from
                         for v in top_row.iter() {
                             combo.push(*v);
                         }
@@ -182,18 +181,6 @@ fn main() {
                         final_answer += combo[0]*combo[1];
 
                     }
-
-                    // for n in top_row{
-                    //     final_answer += n;
-                    // }
-
-                    // for n in mid_row{
-                    //     final_answer += n;
-                    // }
-
-                    // for n in bottom_row{
-                    //     final_answer += n;
-                    // }
                 }
             }
         }
